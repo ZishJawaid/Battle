@@ -16,14 +16,7 @@ describe Player do
             expect(zish.hit_points).to eq Player::DEFAULT_HIT_POINTS
         end
     end
-
-    describe '#attack' do
-        it 'attacks another player' do
-            expect(sophia).to receive(:damage)
-            zish.attack(sophia)
-        end
-    end
-
+   
     describe '#damage' do
         it 'damages another player' do
             expect{ sophia.damage }.to change { sophia.hit_points }.by (-10)

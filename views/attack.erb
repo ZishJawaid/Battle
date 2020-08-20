@@ -1,3 +1,17 @@
-<%= @game.player_1.name %> attacked <%= @game.player_2.name %>!
-<%= @game.player_2.name %>'s HP is now <%= @game.player_2.hit_points %>
-<%= @game.player_2.name %>'s turn
+<% if @game.current_turn == @game.player_1 %>
+  
+<div>
+  <%= @game.player_1.name %> attacked <%= @game.player_2.name %>!
+</div>
+
+<% else %>
+  <%= @game.player_2.name %> attacked <%= @game.player_1.name %>!
+<% end %>
+
+<div>
+  <%= @game.player_2.name %>'s HP is now <%= @game.player_2.hit_points %>
+</div>
+
+<div>
+  <%= @game.player_2.name %>'s turn
+</div>
